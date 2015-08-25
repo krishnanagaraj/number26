@@ -1,4 +1,4 @@
-transaction web service
+Transaction web service
 ===========================
 
 This service is tested on Mac OS X 10.7.3, installed with git version 1.7.7.5 (Apple Git-26), and Apache Maven 3.0.4
@@ -120,14 +120,18 @@ I used curl for testing. Following  are examples of service calls and their resp
 
 6) Get total amount(sum), based on transaction ID. This checks for the parentIds and calculates the sum.
 
-   curl -i -X GET -H "Accept:application/json" http://localhost:9090/transactionservice/sum/6
+  	curl -i -X GET -H "Accept:application/json" http://localhost:9090/transactionservice/sum/6
 
-   HTTP/1.1 200 OK
-   Content-Type: application/json
-   Transfer-Encoding: chunked
-   Server: Jetty(6.1.22)
+  	Response
 
-   {"sum":12000.0}
+  	HTTP/1.1 200 OK
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Server: Jetty(6.1.22)
+
+    {"sum":12000.0}
+
+The HTTP 404 Not Found, 400 Bad Request, 405 Method not allowed, 500 Internal server error handling, is taken care in all the services.
 
 For any assistance please reach out to me at
 -------------------------------------------
